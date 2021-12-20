@@ -1,0 +1,62 @@
+import java.text.DecimalFormat;
+
+/**
+ * Created by nithra on 10/6/16.
+ */
+public class set_decimal_point
+{
+    String c1="####0",c2="#,##,##,##,##,##0",c3="###,###,###,##0";
+    public static DecimalFormat formatter;
+
+
+
+    public String set_decimal(double val,int n,int comma)
+    {
+
+        switch (comma)
+        {
+            case 0:
+            {
+                formatter=new DecimalFormat(c2);
+                formatter.setMaximumFractionDigits(n);
+            }break;
+            case 1:
+            {
+                formatter=new DecimalFormat(c3);
+                formatter.setMaximumFractionDigits(n);
+            }break;
+            case 3:
+            {
+                formatter=new DecimalFormat(c1);
+                formatter.setMaximumFractionDigits(n);
+            }break;
+
+        }
+
+        return formatter.format(val);
+    }
+    public String set_decimal_long(Long val,int n,int comma)
+    {
+
+        switch (comma)
+        {
+            case 0:
+            {
+                formatter=new DecimalFormat(c2);
+                formatter.setMaximumFractionDigits(n);
+            }break;
+            case 1:
+            {
+                formatter=new DecimalFormat(c3);
+                formatter.setMaximumFractionDigits(n);
+            }break;
+            case 3:
+            {
+                formatter=new DecimalFormat(c1);
+                formatter.setMaximumFractionDigits(n);
+            }break;
+
+        }
+
+        return formatter.format(val);
+    }
